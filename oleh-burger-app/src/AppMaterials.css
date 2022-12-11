@@ -1,0 +1,63 @@
+.App-materials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.App-materials_header {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: solid 3px #000;
+}
+  
+.App-materials_blog {
+    width: 810px;
+    padding: 20px 0;
+}
+  
+.App-materials_blog_items-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 361px;
+    margin-top: 15px;
+    padding: 0 25px;
+}
+  
+.App-materials_blog_item {
+    font-size: 20px;
+    height: 70px;
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: dashed 1px #000;
+    display: flex;
+    align-items: center;
+}
+  
+.App-materials_news {
+    width: 300px;
+    padding: 20px 0 30px;
+}
+  
+.App-materials_news_items-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 348px;
+    margin-top: 15px;
+    padding: 0 25px; 
+}
+  
+.App-materials_news_item {
+    font-size: 20px;
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    height: 110px;
+    border-bottom: dashed 1px #000;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.App-header_logo {
+  height: 37px;
+  pointer-events: none;
+}
+
+.App-header_text {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.App-header_link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px;
+  background-color: rgb(88, 88, 88);
+  text-transform: uppercase;
+  border: solid 2px #000;
+  margin: 0 5px;
+}
