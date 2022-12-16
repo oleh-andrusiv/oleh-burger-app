@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/oleh-burger-app/static/css/main.8bea451d.css",
-    "main.js": "/oleh-burger-app/static/js/main.7de52a73.js",
-    "static/media/uaf.jpeg": "/oleh-burger-app/static/media/uaf.1bebc305e68ea733b25b.jpeg",
-    "static/media/logo.svg": "/oleh-burger-app/static/media/logo.63dd89df70ab6a7d5d342c1f0d0a3317.svg",
+    "main.css": "/oleh-burger-app/static/css/main.950f9cbd.css",
+    "main.js": "/oleh-burger-app/static/js/main.cc7ac783.js",
+    "static/media/top-bun.png": "/oleh-burger-app/static/media/top-bun.711f384df179911015c1.png",
+    "static/media/bottom-bun.png": "/oleh-burger-app/static/media/bottom-bun.fa3c315bdb71f28b49d5.png",
+    "static/media/logo.svg": "/oleh-burger-app/static/media/logo.e7370fdf653eb4d99efef4ab0aa1808f.svg",
+    "static/media/ham.svg": "/oleh-burger-app/static/media/ham.4222a466ab8a2704de3044512e5802ad.svg",
+    "static/media/salad.svg": "/oleh-burger-app/static/media/salad.57c017fe35b372dcad262dbbefc04483.svg",
+    "static/media/cheese.svg": "/oleh-burger-app/static/media/cheese.986768a92c6b9ad3bdb3d08843bc049c.svg",
+    "static/media/pickle.svg": "/oleh-burger-app/static/media/pickle.599f6facf8d455a7189b4a958528995a.svg",
+    "static/media/bacon.svg": "/oleh-burger-app/static/media/bacon.101837e65a964a5f867f104a83a6d935.svg",
     "index.html": "/oleh-burger-app/index.html",
-    "main.8bea451d.css.map": "/oleh-burger-app/static/css/main.8bea451d.css.map",
-    "main.7de52a73.js.map": "/oleh-burger-app/static/js/main.7de52a73.js.map"
+    "main.950f9cbd.css.map": "/oleh-burger-app/static/css/main.950f9cbd.css.map",
+    "main.cc7ac783.js.map": "/oleh-burger-app/static/js/main.cc7ac783.js.map"
   },
   "entrypoints": [
-    "static/css/main.8bea451d.css",
-    "static/js/main.7de52a73.js"
+    "static/css/main.950f9cbd.css",
+    "static/js/main.cc7ac783.js"
   ]
 }
