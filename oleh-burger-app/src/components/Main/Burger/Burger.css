@@ -1,0 +1,19 @@
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 70px;
+    margin: 0 40px;
+    height: 560px;
+    background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
+    border-radius: 15px;
+}
+
+.burger_checkout {
+    margin: 15px 0;
+    background-color: #0083b0;
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+    padding: 15px 20px;
+}

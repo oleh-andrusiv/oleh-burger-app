@@ -1,0 +1,11 @@
+.top-bun,
+.bottom-bun {
+    width: 400px;
+    height: 100px;
+}
+
+.start-construction-text {
+    text-align: center;
+    line-height: 0;
+    margin: 20px 0;
+}

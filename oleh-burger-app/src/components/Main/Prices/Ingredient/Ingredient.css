@@ -1,0 +1,11 @@
+.ingredient_item {
+    margin: 15px 0;
+    text-transform: capitalize;
+}
+
+.ingredient_item::after {
+    content: '₴';
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 5px;
+}

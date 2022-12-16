@@ -1,0 +1,24 @@
+.control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.control_header {
+    display: none;
+}
+
+.control_item {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.control_icon,
+.control_btn {
+    width: 25px;
+    height: 25px;
+}
