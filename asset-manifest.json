@@ -1,21 +1,28 @@
 {
   "files": {
-    "main.css": "/oleh-burger-app/static/css/main.950f9cbd.css",
-    "main.js": "/oleh-burger-app/static/js/main.cc7ac783.js",
-    "static/media/top-bun.png": "/oleh-burger-app/static/media/top-bun.711f384df179911015c1.png",
-    "static/media/bottom-bun.png": "/oleh-burger-app/static/media/bottom-bun.fa3c315bdb71f28b49d5.png",
+    "main.css": "/oleh-burger-app/static/css/main.7c3f4799.css",
+    "main.js": "/oleh-burger-app/static/js/main.28c2be90.js",
+    "static/media/top-bun.png": "/oleh-burger-app/static/media/top-bun.b9ce7cb3e7fa5122600c.png",
+    "static/media/bottom-bun.png": "/oleh-burger-app/static/media/bottom-bun.4d08d200e15642653629.png",
+    "static/media/meat.png": "/oleh-burger-app/static/media/meat.b02fb42396a4414bb968.png",
+    "static/media/salad.png": "/oleh-burger-app/static/media/salad.3e38f6c7b0e427661166.png",
+    "static/media/pickle.png": "/oleh-burger-app/static/media/pickle.ae963fe36a6c21ee547f.png",
+    "static/media/tomato.png": "/oleh-burger-app/static/media/tomato.6d474a9b2bb934053864.png",
+    "static/media/onion.png": "/oleh-burger-app/static/media/onion.5197750382ca2652925c.png",
+    "static/media/cheese.png": "/oleh-burger-app/static/media/cheese.631617e6f71c8a1391be.png",
     "static/media/logo.svg": "/oleh-burger-app/static/media/logo.e7370fdf653eb4d99efef4ab0aa1808f.svg",
-    "static/media/ham.svg": "/oleh-burger-app/static/media/ham.4222a466ab8a2704de3044512e5802ad.svg",
-    "static/media/salad.svg": "/oleh-burger-app/static/media/salad.57c017fe35b372dcad262dbbefc04483.svg",
-    "static/media/cheese.svg": "/oleh-burger-app/static/media/cheese.986768a92c6b9ad3bdb3d08843bc049c.svg",
-    "static/media/pickle.svg": "/oleh-burger-app/static/media/pickle.599f6facf8d455a7189b4a958528995a.svg",
-    "static/media/bacon.svg": "/oleh-burger-app/static/media/bacon.101837e65a964a5f867f104a83a6d935.svg",
+    "static/media/onion.svg": "/oleh-burger-app/static/media/onion.cb91367c910c23f83af6.svg",
+    "static/media/meat.svg": "/oleh-burger-app/static/media/meat.4222a466ab8a2704de30.svg",
+    "static/media/salad.svg": "/oleh-burger-app/static/media/salad.57c017fe35b372dcad26.svg",
+    "static/media/cheese.svg": "/oleh-burger-app/static/media/cheese.986768a92c6b9ad3bdb3.svg",
+    "static/media/tomato.svg": "/oleh-burger-app/static/media/tomato.9893a6431f7cf7c7b37d.svg",
+    "static/media/pickle.svg": "/oleh-burger-app/static/media/pickle.599f6facf8d455a7189b.svg",
     "index.html": "/oleh-burger-app/index.html",
-    "main.950f9cbd.css.map": "/oleh-burger-app/static/css/main.950f9cbd.css.map",
-    "main.cc7ac783.js.map": "/oleh-burger-app/static/js/main.cc7ac783.js.map"
+    "main.7c3f4799.css.map": "/oleh-burger-app/static/css/main.7c3f4799.css.map",
+    "main.28c2be90.js.map": "/oleh-burger-app/static/js/main.28c2be90.js.map"
   },
   "entrypoints": [
-    "static/css/main.950f9cbd.css",
-    "static/js/main.cc7ac783.js"
+    "static/css/main.7c3f4799.css",
+    "static/js/main.28c2be90.js"
   ]
 }
