@@ -14,19 +14,19 @@ function Header() {
           <div className="header_nav">
             <a
               className="header_link"
-              href="https://savelife.in.ua/"
+              href="/"
             >
             Home
             </a>
             <a
               className="header_link"
-              href="https://savelife.in.ua/"
+              href="/"
             >
             Orders
             </a>
             <a
               className="header_link"
-              href="https://savelife.in.ua/"
+              href="/"
             >
             FAQ
             </a>

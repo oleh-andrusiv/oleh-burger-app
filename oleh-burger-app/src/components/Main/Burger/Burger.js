@@ -1,12 +1,15 @@
 import './Burger.css';
 import Constructor from './Constructor/Constructor';
 
-function Burger () {
+function Burger ({ingredients, ingredientAddingOrder, totalPrice}) {
     return (
         <div className='burger'>
-            <h2 className='burger_header'>Burger price: 1.0 ₴</h2>
+            <h2 className='burger_header'>{`Burger price: ${totalPrice} ₴`}</h2>
             <button className='burger_checkout btn'>Checkout</button>
-            <Constructor />
+            <Constructor 
+                ingredients={ingredients}
+                ingredientAddingOrder={ingredientAddingOrder}    
+            />
         </div>
     )
 }

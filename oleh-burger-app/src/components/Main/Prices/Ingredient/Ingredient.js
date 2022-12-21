@@ -1,11 +1,9 @@
 import './Ingredient.css'
 
-function Ingredient (ingredients) {
-    const ingred = ingredients.ingreds;
-
+function Ingredient ({ingredients}) {
     return (
         <ul className='prices_ingredients'>
-            {ingred.map((element) => <li className='ingredient_item' key={`Ingredient #${ingred.indexOf(element)}`}>{element.name}: {element.price}</li>)}
+            {ingredients.map((element) => <li className='ingredient_icon' key={`Ingredient-icon #${ingredients.indexOf(element)}`}>{element.name}: {element.price}</li>)}
         </ul>
     );
 }

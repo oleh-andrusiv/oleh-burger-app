@@ -1,9 +1,9 @@
-.ingredient_item {
+.ingredient_icon {
     margin: 15px 0;
     text-transform: capitalize;
 }
 
-.ingredient_item::after {
+.ingredient_icon::after {
     content: '₴';
     font-size: 18px;
     font-weight: 700;

@@ -1,47 +1,15 @@
 import './Control.css'
 
-import bacon from './bacon.svg'
-import cheese from './cheese.svg'
-import ham from './ham.svg'
-import salad from './salad.svg'
-import pickle from './pickle.svg'
+import SingleControl from './SingleControl/SingleControl'
 
-
-function Control () {
+function Control ({ingredients, updateBurger, burgerIngredients}) {
     return (
-        <div className='control'>
+        <div className='control' onClick={updateBurger}>
             <h2 className='control_header'>Burger builder</h2>
             <ul className='control_panel'>
-                <li className='control_item'>
-                    <button className='control_btn btn'>-</button>
-                    <span className='control_count'>0</span>
-                    <button className='control_btn btn'>+</button>
-                    <img className='control_icon' src={bacon} alt='bacon-icon' />
-                </li>
-                <li className='control_item'>
-                    <button className='control_btn btn'>-</button>
-                    <span className='control_count'>0</span>
-                    <button className='control_btn btn'>+</button>
-                    <img className='control_icon' src={cheese} alt='cheese-icon' />
-                </li>
-                <li className='control_item'>
-                    <button className='control_btn btn'>-</button>
-                    <span className='control_count'>0</span>
-                    <button className='control_btn btn'>+</button>
-                    <img className='control_icon' src={ham} alt='ham-icon' />
-                </li>
-                <li className='control_item'>
-                    <button className='control_btn btn'>-</button>
-                    <span className='control_count'>0</span>
-                    <button className='control_btn btn'>+</button>
-                    <img className='control_icon' src={salad} alt='salad-icon' />
-                </li>
-                <li className='control_item'>
-                    <button className='control_btn btn'>-</button>
-                    <span className='control_count'>0</span>
-                    <button className='control_btn btn'>+</button>
-                    <img className='control_icon' src={pickle} alt='pickle-icon' />
-                </li>
+            {ingredients.map((element) => 
+                <SingleControl quantity={burgerIngredients[element.name]} key={element.name} ingredient={element.name} />
+            )}
             </ul>
         </div>
     )

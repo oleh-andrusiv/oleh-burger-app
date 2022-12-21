@@ -4,7 +4,8 @@
     align-items: center;
     padding: 30px 70px;
     margin: 0 40px;
-    height: 560px;
+    min-height: 560px;
+    max-height: fit-content;
     background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
     border-radius: 15px;
 }
@@ -17,3 +18,8 @@
     color: aliceblue;
     padding: 15px 20px;
 }
+
+
+.burger_checkout:hover {
+    box-shadow: 5px 5px 10px -2px #000;
+  }

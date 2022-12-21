@@ -35,5 +35,11 @@ h2 {
 
 .app-wraper {
   background-image: linear-gradient(to right, #00b4db, #0083b0);
-  height: 100vh;
+  min-height: 100vh;
+  max-height: max-content;
+  padding-bottom: 50px;
 } 
+
+.btn {
+  cursor: pointer;
+}

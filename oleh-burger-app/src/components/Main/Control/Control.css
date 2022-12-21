@@ -6,19 +6,6 @@
 }
 
 .control_header {
-    display: none;
-}
-
-.control_item {
-    width: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.control_icon,
-.control_btn {
-    width: 25px;
-    height: 25px;
+    text-align: center;
+    margin-bottom: 10px;
 }
