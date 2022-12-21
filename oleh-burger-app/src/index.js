@@ -13,9 +13,9 @@ class App extends React.Component {
     super();
     this.state = {
       ingredients: [],
-      ingredientAddingOrder: [],
-      burgerCreator: {},
-      orderPrice: "1.00",
+      ingredientsInBurger: [],
+      ingredientsQuantity: {},
+      burgerPrice: "1.00",
     }
   }
 
@@ -25,14 +25,17 @@ class App extends React.Component {
         "https://burger-api-xcwp.onrender.com/ingredients"
       );
 
-      const quantities = data.reduce(
-        (acc, curr) => ({ [curr.name]: 0, ...acc }),
-        {}
-      );
+      const quantities = (array) => {
+        const quantityObj = {};
+        array.forEach((element) => {
+          quantityObj[element.name] = 0
+        })
+        return quantityObj
+      }
 
       this.setState({
         ingredients: data,
-        burgerCreator: quantities,
+        ingredientsQuantity: quantities(data),
       });
     } catch (error) {
       console.log(error);
@@ -40,49 +43,52 @@ class App extends React.Component {
   };
 
   findIngredientPrice = (ingredient) => {
-    return this.state.ingredients.find((price) => price.name === ingredient).price;
-  };
+    return this.state.ingredients.filter((elem) => elem.name === ingredient)[0].price
+  }
 
-  handleChangeBurgerIngredientQuantity = (event) => {
+  handleChangeBurgeringredientsQuantity = (event) => {
     event.preventDefault();
+
     const actionClicked = event.target.getAttribute('action');
     const ingredientClicked = event.target.getAttribute('ing');
 
     if (event.target.classList.contains('control_btn')) {
+
       const ingredientPrice = this.findIngredientPrice(ingredientClicked);
       this.setState((prevState) => {
-        const copyBurgerCreator = { ...prevState.burgerCreator };
-        const copyIngredientAddingOrder = [...prevState.ingredientAddingOrder,];
 
-        let newPrice = +prevState.orderPrice;
+        const newIngredientsQuantity = { ...prevState.ingredientsQuantity };
+        const newIngredientsInBurger = [...prevState.ingredientsInBurger];
+
+        let newPrice = +prevState.burgerPrice;
 
         if (actionClicked === "decrement") {
-          if (copyBurgerCreator[ingredientClicked] > 0) {
+          if (newIngredientsQuantity[ingredientClicked] > 0) {
             newPrice -= +ingredientPrice;
 
-            const index = copyIngredientAddingOrder.lastIndexOf(ingredientClicked);
+            const index = newIngredientsInBurger.lastIndexOf(ingredientClicked)
 
-            copyIngredientAddingOrder.splice(index, 1);
+            newIngredientsInBurger.splice(index, 1);
 
-            copyBurgerCreator[ingredientClicked]--;
+            newIngredientsQuantity[ingredientClicked]--;
           }
         }
         if (actionClicked === "increment") {
           if (
-            copyBurgerCreator[ingredientClicked] < 5 &&
-            copyIngredientAddingOrder.length < 10
+            newIngredientsQuantity[ingredientClicked] < 5 &&
+            newIngredientsInBurger.length < 10
           ) {
             newPrice += +ingredientPrice;
-            copyIngredientAddingOrder.push(ingredientClicked);
-            copyBurgerCreator[ingredientClicked]++;
+            newIngredientsInBurger.push(ingredientClicked);
+            newIngredientsQuantity[ingredientClicked]++;
           }
         }
 
         return {
           ...prevState,
-          ingredientAddingOrder: copyIngredientAddingOrder,
-          burgerCreator: copyBurgerCreator,
-          orderPrice: newPrice.toFixed(2),
+          ingredientsInBurger: newIngredientsInBurger,
+          ingredientsQuantity: newIngredientsQuantity,
+          burgerPrice: newPrice.toFixed(2),
         };
       });
     }
@@ -94,10 +100,10 @@ class App extends React.Component {
         <Header />  
         <Main 
           ingredients={this.state.ingredients}
-          updateBurger={this.handleChangeBurgerIngredientQuantity}
-          burgerIngredients={this.state.burgerCreator}
-          ingredientAddingOrder={this.state.ingredientAddingOrder}
-          totalPrice={this.state.orderPrice}
+          updateBurger={this.handleChangeBurgeringredientsQuantity}
+          ingredientsQuantity={this.state.ingredientsQuantity}
+          ingredientsInBurger={this.state.ingredientsInBurger}
+          burgerPrice={this.state.burgerPrice}
           />
       </div>
     );

@@ -5,7 +5,7 @@ import Control from './Control/Control'
 
 import './Main.css';
 
-function Main ({ingredients, burgerIngredients, updateBurger, ingredientAddingOrder, totalPrice}) {
+function Main ({ingredients, ingredientsQuantity, updateBurger, ingredientsInBurger, burgerPrice}) {
     return (
         <div className='main-wrap wraper'>
             <div className='main container'>
@@ -13,12 +13,12 @@ function Main ({ingredients, burgerIngredients, updateBurger, ingredientAddingOr
                 <Prices ingredients={ingredients}/>
                 <Burger 
                     ingredients={ingredients}
-                    ingredientAddingOrder={ingredientAddingOrder}
-                    totalPrice={totalPrice}
+                    ingredientsInBurger={ingredientsInBurger}
+                    burgerPrice={burgerPrice}
                 />
                 <Control 
                     ingredients={ingredients}
-                    burgerIngredients={burgerIngredients}
+                    ingredientsQuantity={ingredientsQuantity}
                     updateBurger={updateBurger}
                 />
             </div>

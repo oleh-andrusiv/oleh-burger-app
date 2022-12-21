@@ -3,14 +3,14 @@ import './Constructor.css'
 import topBun from './top-bun.png'
 import bottomBun from './bottom-bun.png'
 
-function Constructor ({ingredientAddingOrder}) {
+function Constructor ({ingredientsInBurger}) {
     return (
         <div className='constructor'>
             <img className='top-bun' src={topBun} alt='Burger top bun.'></img>
-            {!ingredientAddingOrder.length &&
+            {!ingredientsInBurger.length &&
                 <p className='start-construction-text'>Please, start by adding products...</p>
             }
-            {ingredientAddingOrder.map((product, index) => {
+            {ingredientsInBurger.map((product, index) => {
                 return (
                     <img src={require(`./${product}.png`)} alt={product} key={product + index} className='ingredient' index={`el-${index}`}></img>
                 );
