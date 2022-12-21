@@ -40,9 +40,7 @@ class App extends React.Component {
   };
 
   findIngredientPrice = (ingredient) => {
-    return this.state.ingredients.find(
-      (price) => price.name === ingredient
-    ).price;
+    return this.state.ingredients.find((price) => price.name === ingredient).price;
   };
 
   handleChangeBurgerIngredientQuantity = (event) => {
@@ -54,9 +52,7 @@ class App extends React.Component {
       const ingredientPrice = this.findIngredientPrice(ingredientClicked);
       this.setState((prevState) => {
         const copyBurgerCreator = { ...prevState.burgerCreator };
-        const copyIngredientAddingOrder = [
-          ...prevState.ingredientAddingOrder,
-        ];
+        const copyIngredientAddingOrder = [...prevState.ingredientAddingOrder,];
 
         let newPrice = +prevState.orderPrice;
 
@@ -64,10 +60,7 @@ class App extends React.Component {
           if (copyBurgerCreator[ingredientClicked] > 0) {
             newPrice -= +ingredientPrice;
 
-            const index =
-              copyIngredientAddingOrder.lastIndexOf(
-                ingredientClicked
-              );
+            const index = copyIngredientAddingOrder.lastIndexOf(ingredientClicked);
 
             copyIngredientAddingOrder.splice(index, 1);
 
