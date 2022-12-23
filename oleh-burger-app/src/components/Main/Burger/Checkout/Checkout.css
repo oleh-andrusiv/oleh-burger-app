@@ -1,0 +1,16 @@
+.burger_checkout_btn {
+    background-color: #0083b0;
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.burger_checkout_btn:hover {
+    box-shadow: 5px 5px 10px -2px #000;
+}
+
+.btn-disabled {
+    display: none;
+}
