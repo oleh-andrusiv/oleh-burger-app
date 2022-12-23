@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/oleh-burger-app/static/css/main.7c3f4799.css",
-    "main.js": "/oleh-burger-app/static/js/main.28c2be90.js",
+    "main.css": "/oleh-burger-app/static/css/main.974bf5ef.css",
+    "main.js": "/oleh-burger-app/static/js/main.95c57d84.js",
     "static/media/top-bun.png": "/oleh-burger-app/static/media/top-bun.b9ce7cb3e7fa5122600c.png",
     "static/media/bottom-bun.png": "/oleh-burger-app/static/media/bottom-bun.4d08d200e15642653629.png",
     "static/media/meat.png": "/oleh-burger-app/static/media/meat.b02fb42396a4414bb968.png",
@@ -18,11 +18,11 @@
     "static/media/tomato.svg": "/oleh-burger-app/static/media/tomato.9893a6431f7cf7c7b37d.svg",
     "static/media/pickle.svg": "/oleh-burger-app/static/media/pickle.599f6facf8d455a7189b.svg",
     "index.html": "/oleh-burger-app/index.html",
-    "main.7c3f4799.css.map": "/oleh-burger-app/static/css/main.7c3f4799.css.map",
-    "main.28c2be90.js.map": "/oleh-burger-app/static/js/main.28c2be90.js.map"
+    "main.974bf5ef.css.map": "/oleh-burger-app/static/css/main.974bf5ef.css.map",
+    "main.95c57d84.js.map": "/oleh-burger-app/static/js/main.95c57d84.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c3f4799.css",
-    "static/js/main.28c2be90.js"
+    "static/css/main.974bf5ef.css",
+    "static/js/main.95c57d84.js"
   ]
 }
