@@ -9,3 +9,16 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
+.control_burger-clearer {
+    background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.control_burger-clearer:hover {
+    box-shadow: 5px 5px 10px -2px #000;
+}

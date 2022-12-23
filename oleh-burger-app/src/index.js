@@ -16,11 +16,15 @@ class App extends React.Component {
       ingredientsInBurger: [],
       ingredientsQuantity: {},
       burgerPrice: "1.00",
+      formOpen: 'form-closed',
+      loader: false,
     }
   }
 
   componentDidMount = async () => {
     try {
+      this.setState({loader: true });
+
       const { data } = await axios.get(
         "https://burger-api-xcwp.onrender.com/ingredients"
       );
@@ -36,6 +40,7 @@ class App extends React.Component {
       this.setState({
         ingredients: data,
         ingredientsQuantity: quantities(data),
+        loader: false,
       });
     } catch (error) {
       console.log(error);
@@ -46,7 +51,7 @@ class App extends React.Component {
     return this.state.ingredients.filter((elem) => elem.name === ingredient)[0].price
   }
 
-  handleChangeBurgeringredientsQuantity = (event) => {
+  changeBurgerIngredients = (event) => {
     event.preventDefault();
 
     const actionClicked = event.target.getAttribute('action');
@@ -94,16 +99,49 @@ class App extends React.Component {
     }
   };
 
+  showCheckoutForm = (event) => {
+    event.preventDefault();
+
+    const clickedElem = event.target.getAttribute('class');
+
+    if (clickedElem === 'burger_checkout_btn' && this.state.burgerPrice !== '1.00') {
+      this.setState({formOpen: 'form-open'})
+    }
+
+    if (clickedElem === 'checkout-form_exit') {
+      this.setState({formOpen: 'form-closed'})
+    }
+  };
+
+
+  clearBurger = () => {
+    const emptyBurger = {};
+    for (const ingredient in this.state.ingredientsQuantity) {
+      emptyBurger[ingredient] = 0;
+    }
+    if (this.state.ingredientsInBurger.length !== 0) {
+      this.setState({
+        burgerPrice: "1.00",
+        ingredientsInBurger: [],
+        ingredientsQuantity: emptyBurger,
+      });
+    }
+  };
+
   render() {
     return (
       <div className="app-wraper"> 
         <Header />  
         <Main 
           ingredients={this.state.ingredients}
-          updateBurger={this.handleChangeBurgeringredientsQuantity}
+          updateBurger={this.changeBurgerIngredients}
           ingredientsQuantity={this.state.ingredientsQuantity}
           ingredientsInBurger={this.state.ingredientsInBurger}
           burgerPrice={this.state.burgerPrice}
+          clearBurger={this.clearBurger}
+          showCheckoutForm={this.showCheckoutForm}
+          formOpen={this.state.formOpen}
+          loader={this.state.loader}
           />
       </div>
     );

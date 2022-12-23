@@ -4,22 +4,8 @@
     align-items: center;
     padding: 30px 70px;
     margin: 0 40px;
-    min-height: 560px;
+    min-height: 360px;
     max-height: fit-content;
     background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
     border-radius: 15px;
 }
-
-.burger_checkout {
-    margin: 15px 0;
-    background-color: #0083b0;
-    border: none;
-    border-radius: 10px;
-    color: aliceblue;
-    padding: 15px 20px;
-}
-
-
-.burger_checkout:hover {
-    box-shadow: 5px 5px 10px -2px #000;
-  }
