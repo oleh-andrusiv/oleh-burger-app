@@ -2,7 +2,6 @@ import Prices from './Prices/Prices';
 import Burger from './Burger/Burger';
 import Control from './Control/Control'
 
-
 import './Main.css';
 
 function Main ({
@@ -12,9 +11,14 @@ function Main ({
     ingredientsInBurger, 
     burgerPrice, 
     clearBurger, 
-    showCheckoutForm, 
-    formOpen,
-    loader}) {
+    showCheckoutModal, 
+    modalOpen,
+    loader,
+    sendOrderData,
+    colectOrderInfo,
+    orderSaved,
+    formOpen
+    }) {
     return (
         <div className='main-wrap wraper'>
             <div className='main container'>
@@ -27,7 +31,13 @@ function Main ({
                     ingredients={ingredients}
                     ingredientsInBurger={ingredientsInBurger}
                     burgerPrice={burgerPrice}
-                    showCheckoutForm={showCheckoutForm}
+                    showCheckoutModal={showCheckoutModal}
+                    modalOpen={modalOpen}
+                    ingredientsQuantity={ingredientsQuantity}
+                    loader={loader}
+                    sendOrderData={sendOrderData}
+                    colectOrderInfo={colectOrderInfo}
+                    orderSaved={orderSaved}
                     formOpen={formOpen}
                 />
                 <Control 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 
 import Header from './components/Header/Header';
@@ -8,80 +8,79 @@ import './index.css';
 
 import axios from "axios";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      ingredients: [],
-      ingredientsInBurger: [],
-      ingredientsQuantity: {},
-      burgerPrice: "1.00",
-      formOpen: 'form-closed',
-      loader: false,
-    }
+const App = () => {
+
+  const loadPrices = async () => await axios.get("https://burger-api-xcwp.onrender.com/ingredients");
+  const placeOrder = async (orderData) => await axios.post("https://burger-api-xcwp.onrender.com/orders", orderData);
+
+  const [ingredients, setIngredients] = useState(null);
+  const [loader, setLoader] = useState(false);
+  const [ingredientsQuantity, setIngredientsQuantity] = useState({});
+  const [ingredientsInBurger, setIngredientsInBurger] = useState([]);
+  const [burgerPrice, setBurgerPrice] = useState('1.00');
+  const [modalOpen, setModalOpen] = useState('modal-closed');
+  const [orderSaved, setOrderSaved] = useState('');
+  const [formOpen, setFormOpen] = useState('form-open')
+  
+  const quantities = (array) => {
+    const quantityObj = {};
+    array.forEach((element) => {
+      quantityObj[element.name] = 0
+    })
+    return quantityObj
   }
-
-  componentDidMount = async () => {
+  
+  useEffect(() => {
     try {
-      this.setState({loader: true });
+      setLoader(true)
+      
+      loadPrices().then((response) => {
+        setIngredients(response.data)
+        setIngredientsQuantity(quantities(response.data))
+      })
 
-      const { data } = await axios.get(
-        "https://burger-api-xcwp.onrender.com/ingredients"
-      );
+      setLoader(false)
 
-      const quantities = (array) => {
-        const quantityObj = {};
-        array.forEach((element) => {
-          quantityObj[element.name] = 0
-        })
-        return quantityObj
-      }
-
-      this.setState({
-        ingredients: data,
-        ingredientsQuantity: quantities(data),
-        loader: false,
-      });
     } catch (error) {
       console.log(error);
     }
-  };
+  },[])
 
-  findIngredientPrice = (ingredient) => {
-    return this.state.ingredients.filter((elem) => elem.name === ingredient)[0].price
+  const findIngredientPrice = (ingredient) => {
+    return ingredients.filter((elem) => elem.name === ingredient)[0].price
   }
 
-  changeBurgerIngredients = (event) => {
+  const changeBurgerIngredients = (event) => {
     event.preventDefault();
-
+    
     const actionClicked = event.target.getAttribute('action');
     const ingredientClicked = event.target.getAttribute('ing');
-
+    
     if (event.target.classList.contains('control_btn')) {
 
-      const ingredientPrice = this.findIngredientPrice(ingredientClicked);
-      this.setState((prevState) => {
+      const ingredientPrice = findIngredientPrice(ingredientClicked);
+        
+      const newIngredientsQuantity = ingredientsQuantity;
+      const newIngredientsInBurger = ingredientsInBurger;
 
-        const newIngredientsQuantity = { ...prevState.ingredientsQuantity };
-        const newIngredientsInBurger = [...prevState.ingredientsInBurger];
-
-        let newPrice = +prevState.burgerPrice;
-
-        if (actionClicked === "decrement") {
-          if (newIngredientsQuantity[ingredientClicked] > 0) {
-            newPrice -= +ingredientPrice;
-
-            const index = newIngredientsInBurger.lastIndexOf(ingredientClicked)
-
-            newIngredientsInBurger.splice(index, 1);
-
-            newIngredientsQuantity[ingredientClicked]--;
-          }
+      let newPrice = +burgerPrice;
+      
+      if (actionClicked === "decrement") {
+        if (newIngredientsQuantity[ingredientClicked] > 0) {
+          newPrice -= +ingredientPrice;
+          
+          const index = newIngredientsInBurger.lastIndexOf(ingredientClicked)
+          
+          newIngredientsInBurger.splice(index, 1);
+          
+          newIngredientsQuantity[ingredientClicked]--;
         }
-        if (actionClicked === "increment") {
-          if (
-            newIngredientsQuantity[ingredientClicked] < 5 &&
-            newIngredientsInBurger.length < 10
+      }
+
+      if (actionClicked === "increment") {
+        if (
+          newIngredientsQuantity[ingredientClicked] < 5 &&
+          newIngredientsInBurger.length < 10
           ) {
             newPrice += +ingredientPrice;
             newIngredientsInBurger.push(ingredientClicked);
@@ -89,63 +88,81 @@ class App extends React.Component {
           }
         }
 
-        return {
-          ...prevState,
-          ingredientsInBurger: newIngredientsInBurger,
-          ingredientsQuantity: newIngredientsQuantity,
-          burgerPrice: newPrice.toFixed(2),
-        };
-      });
+      setIngredientsInBurger(newIngredientsInBurger);
+      setIngredientsQuantity(newIngredientsQuantity);
+      setBurgerPrice(newPrice.toFixed(2));
+          
     }
   };
 
-  showCheckoutForm = (event) => {
-    event.preventDefault();
-
-    const clickedElem = event.target.getAttribute('class');
-
-    if (clickedElem === 'burger_checkout_btn' && this.state.burgerPrice !== '1.00') {
-      this.setState({formOpen: 'form-open'})
-    }
-
-    if (clickedElem === 'checkout-form_exit') {
-      this.setState({formOpen: 'form-closed'})
-    }
-  };
-
-
-  clearBurger = () => {
+  const clearBurger = () => {
     const emptyBurger = {};
-    for (const ingredient in this.state.ingredientsQuantity) {
+    for (const ingredient in ingredientsQuantity) {
       emptyBurger[ingredient] = 0;
     }
-    if (this.state.ingredientsInBurger.length !== 0) {
-      this.setState({
-        burgerPrice: "1.00",
-        ingredientsInBurger: [],
-        ingredientsQuantity: emptyBurger,
-      });
+    if (ingredientsInBurger.length !== 0) {
+        setBurgerPrice("1.00");
+        setIngredientsInBurger([]);
+        setIngredientsQuantity(emptyBurger);
     }
   };
 
-  render() {
+  const showCheckoutModal = (event) => {
+    event.preventDefault();
+    
+    const clickedElem = event.target.getAttribute('checkoutBtnType');
+    
+    if (clickedElem === 'burger_checkout_btn' && burgerPrice !== '1.00') {
+      setModalOpen('modal-open')
+    }
+    
+    if (clickedElem === 'checkout-modal_exit') {
+      setModalOpen('modal-closed')
+    }
+  };
+      
+  const sendOrderData = (orderData) => {
+    try {
+      setLoader(true)
+      console.log(orderData)
+      placeOrder(orderData).then((response) => {
+        console.log(response)
+        if (response.data === 'item saved to database') {
+          setOrderSaved('Your order succesfully created. We will call you to confirm details. Make another one for you mate.')
+        }
+      })
+
+      setLoader(false)
+
+    } catch (error) {
+      console.log(error);
+    }
+
+    setFormOpen('form-closed')
+    clearBurger()
+  };
+
+  if (ingredients !== null) {
     return (
       <div className="app-wraper"> 
         <Header />  
         <Main 
-          ingredients={this.state.ingredients}
-          updateBurger={this.changeBurgerIngredients}
-          ingredientsQuantity={this.state.ingredientsQuantity}
-          ingredientsInBurger={this.state.ingredientsInBurger}
-          burgerPrice={this.state.burgerPrice}
-          clearBurger={this.clearBurger}
-          showCheckoutForm={this.showCheckoutForm}
-          formOpen={this.state.formOpen}
-          loader={this.state.loader}
+          ingredients={ingredients}
+          updateBurger={changeBurgerIngredients}
+          ingredientsQuantity={ingredientsQuantity}
+          ingredientsInBurger={ingredientsInBurger}
+          burgerPrice={burgerPrice}
+          clearBurger={clearBurger}
+          showCheckoutModal={showCheckoutModal}
+          modalOpen={modalOpen}
+          loader={loader}
+          sendOrderData={sendOrderData}
+          orderSaved={orderSaved}
+          formOpen={formOpen}
           />
       </div>
     );
-  }
+  } 
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

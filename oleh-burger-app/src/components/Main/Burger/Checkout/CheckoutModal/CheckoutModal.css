@@ -1,0 +1,66 @@
+.checkout-modal {
+    display: none;
+}
+
+.checkout-modal.modal-open {
+    height: 700px;
+    position: absolute;
+    top: 90px;
+    left: 20%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
+}
+
+.checkout-modal_header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.checkout-modal_ingredient-list {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px 25px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.total-price.form-closed {
+    display: none;
+}
+
+.checkout-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+    margin-top: 30px;
+}  
+
+.checkout-form.form-closed {
+    display: none;
+}
+
+.checkout-form > form {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    min-width: 350px;
+    border-radius: 8px;
+    margin: 32px;
+  }
+
+.saved-order-text {
+    font-size: 20px;
+}
+
+.saved-order-text.form-open {
+    display: none
+}

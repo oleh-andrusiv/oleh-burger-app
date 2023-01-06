@@ -1,8 +1,7 @@
 import Loader from '../Loader/Loader'
+import SingleControl from './SingleControl/SingleControl'
 
 import './Control.css'
-
-import SingleControl from './SingleControl/SingleControl'
 
 function Control ({ ingredients, updateBurger, ingredientsQuantity, clearBurger, loader }) {
     if (!loader) {

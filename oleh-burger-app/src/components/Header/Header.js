@@ -13,7 +13,7 @@ function Header() {
             Burger Builder App
           </p>
           <div className="header_nav">
-            {menuItems.map((page) => (<a className="header_link" href="/">{page}</a>))}
+            {menuItems.map((page) => (<a className="header_link" href="#">{page}</a>))}
           </div>
         </div>
       </div>

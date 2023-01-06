@@ -1,16 +1,33 @@
-import CheckoutForm from "./CheckoutForm/CheckoutForm";
+import CheckoutModal from "./CheckoutModal/CheckoutModal";
 import './Checkout.css'
 
-const Checkout = ({ ingredientsInBurger, burgerPrice, showCheckoutForm, formOpen }) => {
+const Checkout = ({ 
+    ingredients, 
+    ingredientsQuantity, 
+    burgerPrice, 
+    showCheckoutModal, 
+    modalOpen, 
+    loader, 
+    sendOrderData,
+    colectOrderInfo,
+    orderSaved,
+    formOpen
+    }) => {
+
     return (
-        <div onClick={showCheckoutForm} className="burger_checkout">
-            <CheckoutForm
-            ingredientsInBurger={ingredientsInBurger}
+        <div onClick={showCheckoutModal} className="burger_checkout">
+            <CheckoutModal
             burgerPrice={burgerPrice}
-            showCheckoutForm={showCheckoutForm}
+            modalOpen={modalOpen}
+            ingredientsQuantity={ingredientsQuantity}
+            ingredients={ingredients}
+            loader={loader}
+            sendOrderData={sendOrderData}
+            colectOrderInfo={colectOrderInfo}
+            orderSaved={orderSaved}
             formOpen={formOpen}
             />
-            <button className='burger_checkout_btn'>Checkout</button>
+            <button className='burger_checkout_btn' checkoutBtnType='burger_checkout_btn'>Checkout</button>
         </div>
     );
 };

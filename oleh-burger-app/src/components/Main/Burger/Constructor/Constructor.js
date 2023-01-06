@@ -3,6 +3,8 @@ import './Constructor.css'
 import topBun from './top-bun.png'
 import bottomBun from './bottom-bun.png'
 
+import './Constructor.css'
+
 function Constructor ({ingredientsInBurger}) {
     return (
         <div className='constructor'>
