@@ -4,7 +4,7 @@ import SingleControl from './SingleControl/SingleControl'
 import './Control.css'
 
 function Control ({ ingredients, updateBurger, ingredientsQuantity, clearBurger, loader }) {
-    if (!loader) {
+    if (ingredients !== null) {
         return (
             <div className='control' onClick={updateBurger}>
                 <h2 className='control_header'>Burger builder</h2>
@@ -15,9 +15,7 @@ function Control ({ ingredients, updateBurger, ingredientsQuantity, clearBurger,
                 </ul>
                 <button className='control_burger-clearer' onClick={clearBurger}>Clear burger</button>
             </div>
-    )} 
-    
-    if (loader) {
+    )} else {
         return (
             <div className='control'>
                 <Loader />

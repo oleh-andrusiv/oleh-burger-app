@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
+import Loader from './components/Main/Loader/Loader'
 
 import './index.css';
 
@@ -31,16 +32,11 @@ const App = () => {
   }
   
   useEffect(() => {
-    try {
-      setLoader(true)
-      
+    try {    
       loadPrices().then((response) => {
         setIngredients(response.data)
         setIngredientsQuantity(quantities(response.data))
       })
-
-      setLoader(false)
-
     } catch (error) {
       console.log(error);
     }
@@ -118,21 +114,22 @@ const App = () => {
     
     if (clickedElem === 'checkout-modal_exit') {
       setModalOpen('modal-closed')
+      setFormOpen('form-open')
     }
   };
       
   const sendOrderData = (orderData) => {
+    setLoader(true)
+
     try {
-      setLoader(true)
-      console.log(orderData)
       placeOrder(orderData).then((response) => {
         console.log(response)
+        setLoader(false)
+
         if (response.data === 'item saved to database') {
-          setOrderSaved('Your order succesfully created. We will call you to confirm details. Make another one for you mate.')
+          setOrderSaved('Your order succesfully created.')
         }
       })
-
-      setLoader(false)
 
     } catch (error) {
       console.log(error);
@@ -142,7 +139,6 @@ const App = () => {
     clearBurger()
   };
 
-  if (ingredients !== null) {
     return (
       <div className="app-wraper"> 
         <Header />  
@@ -162,7 +158,6 @@ const App = () => {
           />
       </div>
     );
-  } 
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

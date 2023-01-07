@@ -5,8 +5,8 @@
 .checkout-modal.modal-open {
     height: 700px;
     position: absolute;
-    top: 90px;
-    left: 20%;
+    left: 10%;
+    top: 0px;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -35,12 +35,10 @@
 }
 
 .checkout-form {
-    width: 50%;
+    max-width: 50%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 300px;
+    
+    height: 400px;
     margin-top: 30px;
 }  
 
@@ -51,14 +49,19 @@
 .checkout-form > form {
     display: flex;
     flex-direction: column;
-    padding: 32px;
+    justify-content: space-around;
     min-width: 350px;
     border-radius: 8px;
-    margin: 32px;
-  }
+}
+
+.checkout-modal_loader {
+    margin-top: 300px;
+}
 
 .saved-order-text {
-    font-size: 20px;
+    font-size: 16px;
+    width: 500px;
+    text-align: center;
 }
 
 .saved-order-text.form-open {
