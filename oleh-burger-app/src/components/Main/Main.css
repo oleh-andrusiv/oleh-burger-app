@@ -1,0 +1,12 @@
+.main {
+  height: max-content;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: 16px;
+  position: relative;
+}  
+
+.main_header {
+  display: none;
+}
