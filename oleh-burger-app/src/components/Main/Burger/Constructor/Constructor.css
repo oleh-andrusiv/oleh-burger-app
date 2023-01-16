@@ -1,0 +1,95 @@
+.constructor {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    height: 290px;
+    margin: 15px 0;
+}
+
+.top-bun,
+.bottom-bun {
+    width: 300px;
+    height: 100px;
+}
+
+.top-bun {
+    z-index: 1;
+}
+
+.start-construction-text {
+    text-align: center;
+    line-height: 0;
+    margin: 20px 0;
+}
+
+.ingredient {
+    height: 50px;
+    width: 300px;
+    position: absolute;
+}
+
+
+[index=el-0] {
+    bottom: 45px;
+}
+
+[index=el-1] {
+    bottom: 60px
+}
+
+[index=el-2] {
+    bottom: 75px
+}
+
+[index=el-3] {
+    bottom: 90px
+}
+
+[index=el-4] {
+    bottom: 105px
+}
+
+[index=el-5] {
+    bottom: 120px
+}
+
+[index=el-6] {
+    bottom: 135px
+}
+
+[index=el-7] {
+    bottom: 150px
+}
+
+[index=el-8] {
+    bottom: 165px
+}
+
+[index=el-9] {
+    bottom: 170px
+}
+
+[index=el-10] {
+    bottom: 185px
+}
+
+[index=el-11] {
+    bottom: 200px
+}
+
+[index=el-12] {
+    bottom: 215px
+}
+
+[index=el-13] {
+    bottom: 230px
+}
+
+[index=el-14] {
+    bottom: 245px
+}
+
+[index=el-15] {
+    bottom: 260px
+}

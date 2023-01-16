@@ -1,0 +1,43 @@
+.created-orders_list {
+    padding: 30px 0;
+}
+
+.created-orders_navigation {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.created-orders_btn {
+    background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.prev-page {
+    background-image: linear-gradient(to left bottom, #b6f0fd, #69cdee);
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: rgba(0, 0, 0, 0.26);
+    box-shadow: none;
+}
+
+.created-orders_navigation_legend {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 20px;
+    width: 80px;
+}
+
+.created-orders_loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 360px;
+}

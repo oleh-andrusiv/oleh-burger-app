@@ -1,0 +1,25 @@
+.control_item {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.control_icon,
+.control_btn {
+    width: 25px;
+    height: 25px;
+}
+
+.control_btn {
+    background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
+    border: none;
+}
+
+.control_btn:hover {
+    background-image: none;
+    background-color: #0083b0;
+    color: aliceblue;
+    cursor: pointer;
+}

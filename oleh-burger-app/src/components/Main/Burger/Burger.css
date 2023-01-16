@@ -1,0 +1,11 @@
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 70px;
+    margin: 0 40px;
+    min-height: 360px;
+    max-height: fit-content;
+    background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
+    border-radius: 15px;
+}

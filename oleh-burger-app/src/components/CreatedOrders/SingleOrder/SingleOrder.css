@@ -1,0 +1,16 @@
+.created-orders_order-item {
+    margin: 10px 0;
+}
+
+.created-orders_order-item_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: max-content;
+    width: 100%;
+    padding: 5px 50px;
+}
+
+.created-orders_order-item_details_fast {
+    width: min-content;
+}
