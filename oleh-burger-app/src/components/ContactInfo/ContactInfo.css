@@ -1,0 +1,38 @@
+.contacts_loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 360px;
+}
+.contacts_data {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contacts_data-main {
+    min-height: 360px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.constacts-item {
+    height: 50px;
+    display: flex;
+}
+
+.constacts-item_info {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end
+}
+
+.constacts-item_header {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #0000008a;
+    margin-bottom: 3px;
+}

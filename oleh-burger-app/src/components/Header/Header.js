@@ -1,20 +1,29 @@
 import logo from './logo.svg'
 import './Header.css'
 
-function Header() {
-    const menuItems = ['Home', 'Orders', 'FAQ']
+import MenuItem from './MenuItem/MenuItem'
+
+import { NavLink } from 'react-router-dom';
+
+const Header = () => {
+    const menuItems = ['Home', 'Orders', 'Contacts', 'FAQ']
     return (
       <div className='header-wrap wraper'>
         <div className="header container">
-          <div className='header_logo'>
-            <img src={logo} className="header_logo_img" alt="logo" />
-          </div>
+          <NavLink className='header_logo' to={'/'}>
+              <img src={logo} className="header_logo_img" alt="logo" />
+          </NavLink>
           <p className="header_text">
             Burger Builder App
           </p>
-          <div className="header_nav">
-            {menuItems.map((page) => (<a className="header_link" href="#">{page}</a>))}
-          </div>
+          <ul className="header_nav">
+            {menuItems.map((page) => 
+              <MenuItem 
+                key={'menu-item_' + page} 
+                page={page} 
+              />
+            )}
+          </ul>
         </div>
       </div>
     );

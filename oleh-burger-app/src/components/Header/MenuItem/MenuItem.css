@@ -1,0 +1,16 @@
+
+.header_link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px;
+    text-transform: uppercase;
+    border-bottom: solid 2px transparent;
+    margin: 0 5px;
+    line-height: 0;
+    padding-bottom: 30px;
+  }
+  
+  .header_link_active {
+    border-bottom: solid 2px #fff;
+  }

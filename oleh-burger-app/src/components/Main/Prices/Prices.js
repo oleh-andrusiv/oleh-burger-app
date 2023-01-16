@@ -3,7 +3,7 @@ import Loader from '../Loader/Loader'
 
 import './Prices.css';
 
-function Prices ({ingredients, loader}) {
+function Prices ({ ingredients }) {
   if (ingredients !== null) {
     return (
       <div className='prices'>

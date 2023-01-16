@@ -1,11 +1,12 @@
 .header-wrap {
   height: 90px;
+  margin-bottom: 30px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  height: 70px;
+  height: 80px;
   align-items: center;
   box-shadow: 0px 20px 12px -20px #000;
 }
@@ -13,6 +14,7 @@
 .header_logo {
   width: 30%;
   text-align: start;
+  display: block;
 }
 
 .header_logo_img {
@@ -29,27 +31,11 @@
 .header_nav {
   height: 100%;
   display: flex;
-  align-items: end;
+  align-items: center;
   width: 30%;
   justify-content: flex-end;
 }
-
+/* 
 .header_nav:first-child {
   border-bottom: #000;
-}
-
-.header_link {
-  text-decoration: none;
-  color: #fff;
-  font-size: 14px;
-  padding: 5px;
-  text-transform: uppercase;
-  border-bottom: solid 2px transparent;
-  margin: 0 5px;
-  line-height: 0;
-  padding-bottom: 30px;
-}
-
-.header_link:first-child {
-  border-bottom: solid 2px #fff;
-}
+} */

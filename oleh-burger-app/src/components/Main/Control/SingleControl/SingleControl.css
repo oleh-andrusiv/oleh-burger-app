@@ -11,3 +11,15 @@
     width: 25px;
     height: 25px;
 }
+
+.control_btn {
+    background-image: linear-gradient(to right top, #b6f0fd, #69cdee);
+    border: none;
+}
+
+.control_btn:hover {
+    background-image: none;
+    background-color: #0083b0;
+    color: aliceblue;
+    cursor: pointer;
+}

@@ -27,7 +27,7 @@ const Checkout = ({
             orderSaved={orderSaved}
             formOpen={formOpen}
             />
-            <button className='burger_checkout_btn' checkoutBtnType='burger_checkout_btn'>Checkout</button>
+            <button className='burger_checkout_btn' btntype='burger_checkout_btn'>Checkout</button>
         </div>
     );
 };

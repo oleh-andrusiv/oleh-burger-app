@@ -1,0 +1,19 @@
+.constacts_location {
+    height: 50px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.constacts_location_info {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end
+}
+
+.constacts_location_header {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #0000008a;
+    margin-bottom: 3px;
+}

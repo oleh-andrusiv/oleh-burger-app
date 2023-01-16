@@ -65,7 +65,7 @@ const CheckoutModal = ({ ingredients, ingredientsQuantity, burgerPrice, modalOpe
     if (ingredients !== null && !loader) {
         return (
             <div className={`container checkout-modal ${modalOpen}`}>
-                <Button variant="outlined" color="error" checkoutBtnType='checkout-modal_exit' sx={{marginLeft: 95, marginTop: 3}}>
+                <Button variant="outlined" color="error" btntype='checkout-modal_exit' sx={{marginLeft: 95, marginTop: 3}}>
                     Close
                 </Button>
             <h2 className='checkout-modal_header'>Order</h2>

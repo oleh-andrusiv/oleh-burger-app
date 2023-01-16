@@ -3,7 +3,7 @@ import SingleControl from './SingleControl/SingleControl'
 
 import './Control.css'
 
-function Control ({ ingredients, updateBurger, ingredientsQuantity, clearBurger, loader }) {
+function Control ({ ingredients, updateBurger, ingredientsQuantity, clearBurger }) {
     if (ingredients !== null) {
         return (
             <div className='control' onClick={updateBurger}>
